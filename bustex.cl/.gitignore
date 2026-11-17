@@ -1,0 +1,22 @@
+# Files uploaded by users
+uploads/cotizaciones/*
+!uploads/cotizaciones/.htaccess
+!uploads/cotizaciones/.gitkeep
+
+# Temporary / Labs / Vendor
+vendor/
+labs/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE configuration
+.vscode/
+.idea/
+
+# Distribution package output
+dist/
+*.zip
+

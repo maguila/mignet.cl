@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comercial Bustex | Soluciones en Repuestos Automotrices</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="¿No encuentras el repuesto para tu vehículo? En Comercial Bustex buscamos y cotizamos cualquier pieza automotriz. Intermediación rápida, seria y con despacho a todo Chile.">
+  <meta name="keywords"
+    content="repuestos automotrices, comercial bustex, buscar repuestos, repuestos chile, repuestos por chasis, cotizar repuesto whatsapp">
+  <meta name="author" content="Comercial Bustex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Comercial Bustex | Repuestos Automotrices a Pedido">
+  <meta property="og:description"
+    content="Encontramos y cotizamos el repuesto que necesitas sin importar marca, modelo o año. Rápido y con entrega directa.">
+  <meta property="og:image" content="img/logo01.jpeg">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              yellowHover: '#EAB308',
+              darkBg: '#0F0F12',
+              darkCard: '#16161A',
+              darkBorder: '#22222A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Cloudflare Turnstile Anti-Bot API -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Anti-Flicker Theme Initialization -->
+  <script>
+      (function () {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.add('light');
+        }
+      })();
+  </script>
+
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="css/style.css?v=1.0.4">
+</head>
+
+<body class="bg-brand-darkBg text-slate-100 min-h-screen flex flex-col select-none">
+
+  <!-- CABECERA (NAVBAR) -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo y Nombre -->
+      <a href="#inicio" class="flex items-center space-x-3">
+        <div
+          class="w-14 h-14 rounded-xl border border-brand-yellow/20 overflow-hidden flex items-center justify-center bg-black flex-shrink-0">
+          <img src="img/logo02.jpeg" alt="Logo Comercial Bustex" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <span
+            class="font-bold text-base sm:text-lg tracking-wider text-gradient-gold uppercase leading-none">Comercial</span>
+          <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-white leading-none">BUSTEX</span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="#inicio"
+          class="nav-link px-3.5 py-2 rounded-xl text-sm lg:text-base font-semibold text-slate-200 hover:text-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200">Inicio</a>
+        <a href="#que-hacemos"
+          class="nav-link px-3.5 py-2 rounded-xl text-sm lg:text-base font-semibold text-slate-200 hover:text-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200">Qué
+          Hacemos</a>
+        <a href="#como-funciona"
+          class="nav-link px-3.5 py-2 rounded-xl text-sm lg:text-base font-semibold text-slate-200 hover:text-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200">Cómo
+          Funciona</a>
+        <a href="#cotizar"
+          class="nav-link px-3.5 py-2 rounded-xl text-sm lg:text-base font-semibold text-slate-200 hover:text-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200">Cotizar</a>
+        <a href="#faqs"
+          class="nav-link px-3.5 py-2 rounded-xl text-sm lg:text-base font-semibold text-slate-200 hover:text-brand-yellow hover:bg-brand-yellow/10 transition-all duration-200">Preguntas</a>
+      </nav>
+
+      <!-- Botones de Acción Desktop -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- Conmutador Tema Desktop -->
+        <button id="theme-toggle-desktop"
+          class="p-2.5 rounded-lg bg-brand-darkCard/60 border border-brand-darkBorder text-slate-300 hover:text-brand-yellow hover:border-brand-yellow/30 transition-all duration-200 flex items-center justify-center"
+          aria-label="Cambiar tema">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-sun theme-icon-sun">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-moon theme-icon-moon hidden">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <a href="#cotizar"
+          class="bg-brand-yellow hover:bg-brand-yellowHover text-black font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 shadow-md shadow-brand-yellow/10 hover:shadow-brand-yellow/25">
+          Solicitar Repuesto
+        </a>
+      </div>
+
+      <!-- Botón Hamburguesa Móvil -->
+      <button id="menu-toggle" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none"
+        aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu">
+          <line x1="3" x2="21" y1="12" y2="12" />
+          <line x1="3" x2="21" y1="6" y2="6" />
+          <line x1="3" x2="21" y1="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL (NAV DRAWER) -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex justify-end">
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="menu-close"></div>
+    <!-- Contenido del Drawer -->
+    <div
+      class="relative w-4/5 max-w-sm bg-brand-darkCard h-full p-6 flex flex-col justify-between border-l border-white/5">
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 rounded-lg border border-brand-yellow/20 overflow-hidden flex items-center justify-center bg-black flex-shrink-0">
+              <img src="img/logo02.jpeg" alt="Logo Comercial Bustex" class="w-full h-full object-cover">
+            </div>
+            <span class="font-extrabold tracking-wider text-brand-yellow text-lg">BUSTEX</span>
+          </div>
+          <button id="menu-close-btn" class="p-2 text-slate-400 hover:text-white" aria-label="Cerrar menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-x">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Conmutador Tema Móvil -->
+        <div class="mb-6">
+          <button id="theme-toggle-mobile"
+            class="w-full flex items-center justify-between p-3 rounded-xl bg-brand-darkBg/60 border border-brand-darkBorder text-slate-300 hover:text-brand-yellow transition-all duration-200">
+            <span class="text-sm font-medium flex items-center space-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sun theme-icon-sun">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-moon theme-icon-moon hidden">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+              <span class="theme-text-label">Modo Claro</span>
+            </span>
+            <span class="text-xs px-2.5 py-1 rounded bg-brand-yellow/10 text-brand-yellow font-semibold">Cambiar</span>
+          </button>
+        </div>
+
+        <nav class="flex flex-col space-y-4 text-base font-semibold">
+          <a href="#inicio"
+            class="nav-link text-slate-300 hover:text-brand-yellow transition-colors py-2.5 px-3 rounded-lg border-b border-white/5 hover:bg-brand-yellow/10">Inicio</a>
+          <a href="#que-hacemos"
+            class="nav-link text-slate-300 hover:text-brand-yellow transition-colors py-2.5 px-3 rounded-lg border-b border-white/5 hover:bg-brand-yellow/10">Qué
+            Hacemos</a>
+          <a href="#como-funciona"
+            class="nav-link text-slate-300 hover:text-brand-yellow transition-colors py-2.5 px-3 rounded-lg border-b border-white/5 hover:bg-brand-yellow/10">Cómo
+            Funciona</a>
+          <a href="#cotizar"
+            class="nav-link text-slate-300 hover:text-brand-yellow transition-colors py-2.5 px-3 rounded-lg border-b border-white/5 hover:bg-brand-yellow/10">Cotizar
+            Repuesto</a>
+          <a href="#faqs"
+            class="nav-link text-slate-300 hover:text-brand-yellow transition-colors py-2.5 px-3 rounded-lg hover:bg-brand-yellow/10">Preguntas
+            Frecuentes</a>
+        </nav>
+      </div>
+      <div class="mt-auto">
+        <a href="#cotizar"
+          class="w-full block text-center bg-brand-yellow hover:bg-brand-yellowHover text-black font-semibold py-3.5 rounded-xl transition-colors shadow-lg">
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="flex-grow pt-20">
+
+    <!-- SECCIÓN HÉROE -->
+    <section id="inicio"
+      class="relative min-h-[75vh] flex items-center justify-center pt-4 pb-12 sm:pt-6 sm:pb-16 px-4 overflow-hidden">
+      <!-- Fondo decorativo con luces difusas -->
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-yellow/5 rounded-full filter blur-[100px] pointer-events-none">
+      </div>
+      <div
+        class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-yellow-600/5 rounded-full filter blur-[120px] pointer-events-none">
+      </div>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+        <!-- Banderas de Origen de Repuestos -->
+        <div class="mb-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-3xl">
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/us.svg" width="22" height="16" alt="Bandera Estados Unidos" class="flag-img">
+            <span>Estados Unidos</span>
+          </div>
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/eu.svg" width="22" height="16" alt="Bandera Unión Europea" class="flag-img">
+            <span>Unión Europea</span>
+          </div>
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/cn.svg" width="22" height="16" alt="Bandera China" class="flag-img">
+            <span>China</span>
+          </div>
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/jp.svg" width="22" height="16" alt="Bandera Japón" class="flag-img">
+            <span>Japón</span>
+          </div>
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/kr.svg" width="22" height="16" alt="Bandera Corea" class="flag-img">
+            <span>Corea</span>
+          </div>
+          <div
+            class="flag-pill flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold cursor-default">
+            <img src="img/flags/br.svg" width="22" height="16" alt="Bandera Brasil" class="flag-img">
+            <span>Brasil</span>
+          </div>
+        </div>
+
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center space-x-2 bg-brand-yellow/10 border border-brand-yellow/20 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-brand-yellow uppercase mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-sparkles">
+            <path d="M12 3v18" />
+            <path d="M3 12h18" />
+            <path d="m19 5-14 14" />
+            <path d="m5 5 14 14" />
+          </svg>
+          <span>Intermediación Profesional Sin Límites</span>
+        </div>
+
+        <!-- Título Principal -->
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight max-w-4xl">
+          <span class="text-white">¿No encuentras el repuesto?</span>
+          <span class="block text-gradient-gold">Nosotros lo buscamos por ti.</span>
+        </h1>
+
+        <!-- Descripción -->
+        <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mb-10 font-light leading-relaxed">
+          No te desgastes buscando pieza por pieza. Si no tenemos el repuesto disponible, activamos nuestra red de
+          proveedores locales e internacionales para conseguir el componente que tú vehículo o maquinaria necesita.
+          <strong class="font-semibold text-slate-100">Fácil, rápido y garantizado.</strong>
+        </p>
+
+        <!-- CTAs -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 w-full px-4 sm:px-0">
+          <a href="#cotizar"
+            class="w-full sm:w-auto bg-brand-yellow hover:bg-brand-yellowHover text-black font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-brand-yellow/10 hover:shadow-brand-yellow/20 flex items-center justify-center space-x-2">
+            <span>Cotizar con nosotros</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-right">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#que-hacemos"
+            class="w-full sm:w-auto glass-panel hover:bg-white/5 text-slate-300 hover:text-white font-medium px-8 py-4 rounded-xl text-base transition-colors flex items-center justify-center">
+            Ver Qué Hacemos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROUSEL DE MARCAS (SWIPER) -->
+    <section class="border-y border-brand-darkBorder bg-brand-darkCard/30 py-8 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 mb-6">
+        <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">Repuestos para todas las
+          marcas líderes</p>
+      </div>
+      <!-- Swiper Container -->
+      <div class="swiper brand-swiper max-w-7xl mx-auto px-4 cursor-grab active:cursor-grabbing">
+        <div class="swiper-wrapper items-center">
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/toyota.svg" alt="Toyota"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Toyota</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/ford.svg" alt="Ford"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Ford</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/chevrolet.svg" alt="Chevrolet"
+                class="h-7 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Chevrolet</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/hyundai.svg" alt="Hyundai"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Hyundai</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/nissan.svg" alt="Nissan"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Nissan</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/peugeot.svg" alt="Peugeot"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Peugeot</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/volkswagen.svg" alt="Volkswagen"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Volkswagen</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/bmw.svg" alt="BMW"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">BMW</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/mercedes.svg" alt="Mercedes"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Mercedes</span>
+            </div>
+          </div>
+          <div class="swiper-slide flex justify-center items-center">
+            <div
+              class="brand-logo-card flex flex-col items-center justify-center p-3 rounded-xl bg-brand-darkCard/60 border border-brand-darkBorder hover:border-brand-yellow/50 transition-all duration-300 group w-36 h-20">
+              <img src="img/brands/suzuki.svg" alt="Suzuki"
+                class="h-8 w-auto opacity-75 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+              <span
+                class="text-[11px] font-bold text-slate-400 group-hover:text-brand-yellow transition-colors mt-1.5 tracking-wider uppercase">Suzuki</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN QUÉ HACEMOS -->
+    <section id="que-hacemos" class="py-24 px-4 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-3">Nuestra Propuesta</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
+          Una intermediación inteligente y transparente
+        </p>
+        <p class="text-slate-400 text-base font-light">
+          Nos enfocamos al 100% en la logística de adquisición ágil, encontrando la mejor relación precio-calidad a
+          través de alianzas estratégicas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Tarjeta 1 -->
+        <div
+          class="bg-brand-darkCard/40 border border-brand-darkBorder rounded-2xl p-6 hover-border-glow flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-search">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Búsqueda Dedicada</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Rastreamos repuestos difíciles de encontrar, descontinuados, de carrocería, motor o suspensión en tiempo
+              récord.
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-brand-yellow mt-6 flex items-center space-x-1">
+            <span>Red multimarca</span>
+          </span>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div
+          class="bg-brand-darkCard/40 border border-brand-darkBorder rounded-2xl p-6 hover-border-glow flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-shield-check">
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6Z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Legitimidad Comercial</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Olvídate de compras informales con riesgos de estafa. Brindamos soporte corporativo, orden formal de
+              compra y garantía.
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-brand-yellow mt-6 flex items-center space-x-1">
+            <span>Transacciones seguras</span>
+          </span>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div
+          class="bg-brand-darkCard/40 border border-brand-darkBorder rounded-2xl p-6 hover-border-glow flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-wrench">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Filtro de Compatibilidad</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Validamos el número de chasis (VIN) de tu vehículo para asegurar que la pieza cotizada sea 100% compatible
+              antes de comprar.
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-brand-yellow mt-6 flex items-center space-x-1">
+            <span>Cero errores de pieza</span>
+          </span>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div
+          class="bg-brand-darkCard/40 border border-brand-darkBorder rounded-2xl p-6 hover-border-glow flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-truck">
+                <path d="M14 18H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z" />
+                <path d="M16 8h4a2 2 0 0 1 2 2v3.5a.5.5 0 0 1-.5.5h-5.5V8z" />
+                <circle cx="7.5" cy="18" r="1.5" />
+                <circle cx="16.5" cy="18" r="1.5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Logística y Despacho</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-light">
+              Despachamos directamente a tu domicilio o directamente al taller mecánico donde esté tu vehículo en
+              reparación.
+            </p>
+          </div>
+          <span class="text-xs font-semibold text-brand-yellow mt-6 flex items-center space-x-1">
+            <span>Envíos a todo el país</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CÓMO FUNCIONA (PROCESO) -->
+    <section id="como-funciona" class="py-24 bg-brand-darkCard/30 border-y border-brand-darkBorder">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <h2 class="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-3">Tu Solución en 3 Pasos</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            ¿Cómo trabajamos?
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Línea de conexión Desktop -->
+          <div
+            class="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-brand-yellow/0 via-brand-yellow/30 to-brand-yellow/0 -translate-y-8 z-0">
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+            <!-- Paso 1 -->
+            <div class="flex flex-col items-center text-center group">
+              <div
+                class="w-16 h-16 rounded-full bg-brand-darkCard border-2 border-brand-darkBorder group-hover:border-brand-yellow text-brand-yellow flex items-center justify-center font-bold text-xl mb-6 shadow-md transition-all duration-300">
+                1
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Envías el requerimiento</h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-light max-w-xs">
+                Completa el formulario web con los datos básicos de tu vehículo, chasis (VIN) y el repuesto que buscas.
+              </p>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex flex-col items-center text-center group">
+              <div
+                class="w-16 h-16 rounded-full bg-brand-darkCard border-2 border-brand-darkBorder group-hover:border-brand-yellow text-brand-yellow flex items-center justify-center font-bold text-xl mb-6 shadow-md transition-all duration-300">
+                2
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Rastreo y Cotización</h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-light max-w-xs">
+                Buscamos en nuestra red calificada y te enviamos la mejor opción disponible en precio, procedencia y
+                plazo de entrega.
+              </p>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex flex-col items-center text-center group">
+              <div
+                class="w-16 h-16 rounded-full bg-brand-darkCard border-2 border-brand-darkBorder group-hover:border-brand-yellow text-brand-yellow flex items-center justify-center font-bold text-xl mb-6 shadow-md transition-all duration-300">
+                3
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Pago y Despacho</h3>
+              <p class="text-slate-400 text-sm leading-relaxed font-light max-w-xs mb-4">
+                Confirmas la cotización y realizas el pago por transferencia bancaria o link de pago seguro Webpay Plus / RedCompra.
+              </p>
+              <div class="w-full max-w-[220px] rounded-xl overflow-hidden border border-slate-700/60 shadow-lg bg-white p-1 transition-transform duration-300 group-hover:scale-105">
+                <img src="img/webpay-plus-banner.svg" alt="Paga con Webpay Plus, RedCompra y Tarjetas" class="w-full h-auto object-contain">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FORMULARIO DE COTIZACIÓN -->
+    <section id="cotizar" class="py-24 px-4 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Info del Formulario y Sello de Confianza -->
+        <div class="lg:col-span-5 space-y-6">
+          <h2 class="text-xs font-bold text-brand-yellow uppercase tracking-widest">Canal Directo</h2>
+          <h3 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+            ¿Listo para cotizar tu repuesto?
+          </h3>
+          <p class="text-slate-400 font-light leading-relaxed">
+            Completa los datos en este asistente y presiona el botón. Serás redirigido directamente a nuestro WhatsApp
+            con toda la información ya formateada para que te atendamos sin esperas.
+          </p>
+
+          <!-- TARJETA/SELLO DE CONFIANZA COMERCIAL -->
+          <div
+            class="p-6 rounded-2xl bg-gradient-to-br from-brand-darkCard via-brand-darkCard/80 to-brand-yellow/5 border border-brand-yellow/30 shadow-xl space-y-4">
+            <div class="flex items-center space-x-3.5 pb-3 border-b border-brand-darkBorder">
+              <div
+                class="w-12 h-12 rounded-xl bg-brand-yellow/10 border border-brand-yellow/30 flex items-center justify-center text-brand-yellow flex-shrink-0 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-file-check-2">
+                  <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <path d="m3 15 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[10px] font-extrabold text-brand-yellow uppercase tracking-widest block">Transacción
+                  Segura & Transparente</span>
+                <h4 class="text-base font-bold text-white leading-snug">Orden de Compra Formal Emitida</h4>
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-1">
+              <div class="flex items-start space-x-3">
+                <div class="text-brand-yellow mt-0.5 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <p class="text-xs text-slate-300 font-light leading-relaxed">
+                  <strong class="font-semibold text-slate-100">Respaldo formal:</strong> Emitimos documento y orden de
+                  compra detallada previo a solicitar cualquier pago.
+                </p>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="text-brand-yellow mt-0.5 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <div class="space-y-2 w-full">
+                  <p class="text-xs text-slate-300 font-light leading-relaxed">
+                    <strong class="font-semibold text-slate-100">Medios de pago oficiales:</strong> Transferencia bancaria
+                    directa o link de pago seguro (Webpay Plus, RedCompra, Visa, Mastercard, Amex).
+                  </p>
+                  <div class="pt-1 overflow-hidden rounded-xl shadow-xl border border-slate-700/60 bg-white p-1.5 transition-all duration-300 hover:border-brand-yellow/50">
+                    <img src="img/webpay-plus-banner.svg" alt="Pagar con Webpay Plus, RedCompra, Visa, Mastercard, Transbank" class="w-full h-auto object-contain max-w-full">
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <div class="text-brand-yellow mt-0.5 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </div>
+                <p class="text-xs text-slate-300 font-light leading-relaxed">
+                  <strong class="font-semibold text-slate-100">Despacho garantizado:</strong> Una vez realizado el pago,
+                  se acuerda el despacho con el ejecutivo de ventas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start space-x-3">
+              <div class="text-brand-yellow mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-check">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6Z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Garantía de Compatibilidad</h4>
+                <p class="text-slate-400 text-xs font-light">Usamos el VIN para asegurarnos de que la pieza calce.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="text-brand-yellow mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-truck">
+                  <path d="M14 18H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2z" />
+                  <path d="M16 8h4a2 2 0 0 1 2 2v3.5a.5.5 0 0 1-.5.5h-5.5V8z" />
+                  <circle cx="7.5" cy="18" r="1.5" />
+                  <circle cx="16.5" cy="18" r="1.5" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Logística Integral</h4>
+                <p class="text-slate-400 text-xs font-light">Gestionamos el empaque y despacho rápido a todo Chile.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario (Card) -->
+        <div
+          class="lg:col-span-7 bg-brand-darkCard/40 border border-brand-darkBorder rounded-3xl p-6 sm:p-8 glass-panel relative">
+          <form id="quote-form" class="space-y-6" enctype="multipart/form-data">
+            <!-- Campo Honeypot (Trampa Anti-Bot Oculta) -->
+            <input type="text" name="b_website_hp" id="b_website_hp" class="hidden" tabindex="-1" autocomplete="off">
+            <!-- Canal preferido oculto (whatsapp / email) -->
+            <input type="hidden" name="preferred_channel" id="preferred_channel" value="whatsapp">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Nombre -->
+              <div>
+                <label for="client-name"
+                  class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Tu Nombre *</label>
+                <input type="text" id="client-name" name="client-name" required placeholder="Ej: Juan Pérez"
+                  class="w-full bg-brand-darkBg/60 border border-brand-darkBorder rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-yellow transition-colors">
+              </div>
+              <!-- Teléfono -->
+              <div>
+                <label for="client-phone"
+                  class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Número de Contacto
+                  *</label>
+                <input type="tel" id="client-phone" name="client-phone" required placeholder="Ej: +569 8765 4321"
+                  class="w-full bg-brand-darkBg/60 border border-brand-darkBorder rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-yellow transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Vehículo -->
+              <div>
+                <label for="vehicle-info"
+                  class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Vehículo (Marca,
+                  Modelo, Año) *</label>
+                <input type="text" id="vehicle-info" name="vehicle-info" required placeholder="Ej: Ford F-150 2018"
+                  class="w-full bg-brand-darkBg/60 border border-brand-darkBorder rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-yellow transition-colors">
+              </div>
+              <!-- VIN / Chasis -->
+              <div>
+                <label for="vin-number"
+                  class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Nº de Chasis / VIN
+                  (Recomendado)</label>
+                <input type="text" id="vin-number" name="vin-number" placeholder="Ej: 1FTFW1EF5JFAXXXXX"
+                  class="w-full bg-brand-darkBg/60 border border-brand-darkBorder rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-yellow transition-colors">
+              </div>
+            </div>
+
+            <!-- Repuesto solicitado -->
+            <div>
+              <label for="part-description"
+                class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">¿Qué repuesto necesitas?
+                *</label>
+              <textarea id="part-description" name="part-description" required rows="3"
+                placeholder="Describe la pieza. Ej: Alternador original, foco delantero izquierdo, etc."
+                class="w-full bg-brand-darkBg/60 border border-brand-darkBorder rounded-xl px-4 py-3 text-slate-100 text-sm focus:outline-none focus:border-brand-yellow transition-colors resize-none"></textarea>
+            </div>
+
+            <!-- Adjuntar Imagen Referencial (Box interactivo) -->
+            <div>
+              <label
+                class="block text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider flex items-center justify-between">
+                <span>Adjuntar Imagen Referencial (Opcional)</span>
+                <span class="text-[10px] text-brand-yellow font-normal">Sube foto de la pieza o muestra</span>
+              </label>
+              <div id="image-dropzone"
+                class="border-2 border-dashed border-brand-darkBorder hover:border-brand-yellow/50 bg-brand-darkBg/40 rounded-xl p-4 text-center cursor-pointer transition-all duration-200 group">
+                <input type="file" id="part-image" name="part-image" accept="image/*" class="hidden">
+
+                <div id="dropzone-prompt" class="flex flex-col items-center justify-center space-y-2 py-2">
+                  <div
+                    class="w-10 h-10 rounded-full bg-brand-yellow/10 group-hover:bg-brand-yellow/20 text-brand-yellow flex items-center justify-center transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-camera">
+                      <path
+                        d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                      <circle cx="12" cy="13" r="3" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-semibold text-slate-300 group-hover:text-brand-yellow transition-colors">
+                    Haz clic o arrastra una foto del repuesto aquí
+                  </span>
+                  <span class="text-[11px] text-slate-500 font-light">JPG, PNG o WEBP (Máx. 10MB)</span>
+                </div>
+
+                <!-- Previsualización del archivo cargado -->
+                <div id="file-preview"
+                  class="hidden flex items-center justify-between bg-brand-darkCard p-3 rounded-lg border border-brand-yellow/40">
+                  <div class="flex items-center space-x-3 overflow-hidden">
+                    <img id="preview-img" src="" alt="Previsualización"
+                      class="w-12 h-12 object-cover rounded-md border border-brand-darkBorder flex-shrink-0">
+                    <div class="text-left overflow-hidden">
+                      <p id="file-name"
+                        class="text-xs font-bold text-slate-200 truncate max-w-[180px] sm:max-w-[240px]">
+                        foto_repuesto.jpg</p>
+                      <p id="file-size" class="text-[10px] text-slate-400">1.2 MB</p>
+                      <span class="text-[10px] text-green-400 font-semibold flex items-center gap-1 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        Imagen lista para adjuntar
+                      </span>
+                    </div>
+                  </div>
+                  <button type="button" id="remove-file-btn"
+                    class="p-2 rounded-lg text-slate-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                    title="Quitar foto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 6 6 18" />
+                      <path d="m6 6 12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Widget Cloudflare Turnstile Anti-Bot -->
+            <div class="cf-turnstile flex justify-center pt-1" data-sitekey="0x4AAAAAAEIw1PK37qHxkAST"
+              data-theme="dark"></div>
+
+            <!-- Botones de Acción Formulario -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <!-- Botón WhatsApp (Submit principal) -->
+              <button type="submit"
+                class="w-full bg-brand-yellow hover:bg-brand-yellowHover text-black font-extrabold py-4 px-3 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg shadow-brand-yellow/10 hover:shadow-brand-yellow/20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-phone-call">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  <path d="M14.05 2a9 9 0 0 1 8 7.94" />
+                  <path d="M14.05 6A5 5 0 0 1 18 10" />
+                </svg>
+                <span class="text-xs sm:text-sm uppercase tracking-wider">Cotizar por WhatsApp</span>
+              </button>
+
+              <!-- Botón Email -->
+              <button type="button" id="btn-quote-email"
+                class="w-full glass-panel hover:bg-brand-yellow/10 border border-brand-darkBorder hover:border-brand-yellow/40 text-slate-100 hover:text-brand-yellow font-extrabold py-4 px-3 rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-mail">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span class="text-xs sm:text-sm uppercase tracking-wider">Cotizar por Email</span>
+              </button>
+            </div>
+
+            <p class="text-center text-xs text-slate-500 font-light mt-4">
+              * Completa la información y selecciona tu canal de contacto preferido (WhatsApp o Correo Electrónico).
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQs) -->
+    <section id="faqs" class="py-24 bg-brand-darkCard/30 border-t border-brand-darkBorder">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-3 font-semibold">Respuesta
+            Inmediata</h2>
+          <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Preguntas Frecuentes</h3>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="faq-item bg-brand-darkCard/60 border border-brand-darkBorder rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none">
+              <span class="font-bold text-white text-base sm:text-lg">¿Tienen tienda física o stock de repuestos?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon text-slate-400 transition-transform duration-300">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 transition-all duration-300 ease-in-out">
+              <p class="px-6 pb-6 text-slate-400 text-sm leading-relaxed font-light">
+                No, operamos 100% bajo un modelo de intermediación. No poseemos bodega física con inventario propio ni
+                gestionamos stock acumulado. Esto nos permite buscar con libertad la mejor oferta del mercado (original
+                o alternativo) sin sesgos ni costos fijos traspasados al cliente.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item bg-brand-darkCard/60 border border-brand-darkBorder rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none">
+              <span class="font-bold text-white text-base sm:text-lg">¿Por qué piden el número de chasis o VIN?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon text-slate-400 transition-transform duration-300">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 transition-all duration-300 ease-in-out">
+              <p class="px-6 pb-6 text-slate-400 text-sm leading-relaxed font-light">
+                El número de chasis (VIN) es la identidad única de tu vehículo. Al validar este número con los catálogos
+                técnicos de la marca, nos aseguramos al 100% de que la pieza solicitada sea idéntica y compatible con tu
+                motor, año y equipamiento, evitando devoluciones o pérdidas de tiempo.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item bg-brand-darkCard/60 border border-brand-darkBorder rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none">
+              <span class="font-bold text-white text-base sm:text-lg">¿Cómo se realiza el pago del repuesto?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon text-slate-400 transition-transform duration-300">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 transition-all duration-300 ease-in-out">
+              <div class="px-6 pb-6 space-y-4">
+                <p class="text-slate-400 text-sm leading-relaxed font-light">
+                  Una vez que te enviamos la cotización y estás de acuerdo, emitimos una orden de compra formal. El pago
+                  se gestiona de manera transparente mediante transferencia bancaria o link de pago seguro (Webpay Plus, RedCompra, Visa, Mastercard, Magna, Diners Club, Amex). Una vez realizado el
+                  pago, se acuerda el despacho con el ejecutivo de ventas.
+                </p>
+                <div class="max-w-md rounded-xl overflow-hidden border border-slate-700/60 shadow-lg bg-white p-1.5">
+                  <img src="img/webpay-plus-banner.svg" alt="Medios de Pago Aceptados - Webpay Plus Transbank" class="w-full h-auto object-contain">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item bg-brand-darkCard/60 border border-brand-darkBorder rounded-2xl overflow-hidden">
+            <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none">
+              <span class="font-bold text-white text-base sm:text-lg">¿Tienen garantía los repuestos adquiridos?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon text-slate-400 transition-transform duration-300">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 transition-all duration-300 ease-in-out">
+              <p class="px-6 pb-6 text-slate-400 text-sm leading-relaxed font-light">
+                Sí. Todos los repuestos comercializados a través de nuestra intermediación cuentan con la garantía
+                oficial otorgada por el distribuidor o fabricante correspondiente. En caso de fallas de fábrica,
+                gestionamos el proceso de garantía sin costo adicional para ti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="bg-brand-darkBg border-t border-brand-darkBorder py-12 px-4 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+
+      <!-- Izquierda: Logo y Copyright -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-center md:justify-start space-x-3">
+          <div
+            class="w-16 h-16 rounded-xl border border-brand-yellow/20 overflow-hidden flex items-center justify-center bg-black shadow-md flex-shrink-0">
+            <img src="img/logo02.jpeg" alt="Logo Comercial Bustex" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col text-left">
+            <span class="font-bold text-sm tracking-wider text-gradient-gold uppercase leading-none">Comercial</span>
+            <span class="font-extrabold text-xl tracking-tight text-white leading-tight">BUSTEX</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 font-light">
+          &copy; 2026 Comercial Bustex. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <!-- Centro: Mensaje Legitimidad -->
+      <div class="text-slate-400 text-xs font-light max-w-sm mx-auto md:mx-0">
+        <span class="font-semibold text-slate-300 block mb-1">Presencia Digital & Legitimidad</span>
+        Servicios profesionales de intermediación, compra y logística de repuestos. Operamos bajo estándares
+        corporativos y orden de trabajo.
+      </div>
+
+      <!-- Derecha: Redes y Contacto -->
+      <div class="flex flex-col items-center md:items-end space-y-3">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Contacto Directo</span>
+        <div class="flex space-x-4 items-center">
+          <a href="https://api.whatsapp.com/send?phone=56961689241" target="_blank"
+            class="text-slate-300 hover:text-green-400 transition-colors flex items-center space-x-1.5 text-xs font-medium"
+            aria-label="WhatsApp Directo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-phone text-green-400">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              <path d="M14.05 2a9 9 0 0 1 8 7.94" />
+              <path d="M14.05 6A5 5 0 0 1 18 10" />
+            </svg>
+            <span>+56 9 6168 9241</span>
+          </a>
+          <a href="https://instagram.com/comercial.bustex" target="_blank"
+            class="text-slate-400 hover:text-brand-yellow transition-colors" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-instagram">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+          <a href="mailto:alfonso.iturra@bustex.cl" class="text-slate-400 hover:text-brand-yellow transition-colors"
+            aria-label="Email (alfonso.iturra@bustex.cl)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-mail">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a id="whatsapp-floating" target="_blank"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 animate-whatsapp hover:scale-110"
+    aria-label="Contacto por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call">
+      <path
+        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      <path d="M14.05 2a9 9 0 0 1 8 7.94" />
+      <path d="M14.05 6A5 5 0 0 1 18 10" />
+    </svg>
+  </a>
+
+  <!-- CONTENEDOR DE NOTIFICACIONES (TOASTS) -->
+  <div id="toast-container"
+    class="fixed bottom-6 left-4 sm:left-6 z-[60] flex flex-col space-y-3 max-w-[calc(100vw-2rem)] sm:max-w-md w-full pointer-events-none">
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Configuración Dinámica PHP -> JS -->
+  <script src="api/config_js.php?v=1.0.4"></script>
+  <!-- Lógica Principal -->
+  <script src="js/main.js?v=1.0.4"></script>
+</body>
+
+</html>

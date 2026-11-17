@@ -1,0 +1,18 @@
+# ============================================================
+# Comercial Bustex - Configuración de Servidor Apache / cPanel
+# ============================================================
+
+RewriteEngine On
+
+# Establecer la página predeterminada
+DirectoryIndex index.html index.php
+
+# Prevenir el listado de directorios
+Options -Indexes
+
+# Cabeceras de Seguridad Básicas
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

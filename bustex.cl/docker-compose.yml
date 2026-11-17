@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # Servidor Web PHP 8.3 + Apache Ultraligero
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bustex_app
+    restart: always
+    ports:
+      - "127.0.0.1:9000:80" # Mapeado a localhost:9000 para Nginx Reverse Proxy
+    volumes:
+      - .:/var/www/html

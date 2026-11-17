@@ -1,0 +1,27 @@
+# ============================================================
+# Reglas de Seguridad para Carpeta de Adjuntos de Cotización
+# Desactiva la ejecución de scripts para evitar archivos maliciosos
+# ============================================================
+
+# Desactivar motores de ejecución PHP (compatibilidad apache/cPanel)
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+Options -ExecCGI -Indexes
+
+# Bloquear ejecución de extensiones ejecutables peligrosas
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .phps .cgi .pl .exe .sh
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps|cgi|pl|exe|sh)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Permitir solo acceso a imágenes
+<FilesMatch "\.(jpg|jpeg|png|webp|gif|JPG|JPEG|PNG|WEBP|GIF)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --color-primary: #FACC15; /* Tailwind Yellow 400 */
+  --color-primary-hover: #EAB308; /* Tailwind Yellow 500 */
+  --color-dark-bg: #0F0F12;
+  --color-dark-card: #16161A;
+  --color-dark-border: #22222A;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* 80px offset for fixed navbar */
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-dark-bg);
+  color: #F8FAFC; /* Slate 50 */
+}
+
+section[id] {
+  scroll-margin-top: 5rem; /* 80px offset for fixed navbar */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(22, 22, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-header {
+  background: rgba(15, 15, 18, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #2D2D37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4B4B5C;
+}
+
+/* WhatsApp Pulse Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-whatsapp {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Custom gradient texts */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFF 30%, #FACC15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid & Border hover effect */
+.hover-border-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-border-glow:hover {
+  border-color: rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: #4B4B5C !important;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  width: 20px !important;
+  border-radius: 4px !important;
+}
+
+/* Marquee / Infinite Slider for brands (pure CSS fallback just in case or alternative) */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Theme Smooth Transition */
+html, body, header, div, section, footer, article, nav, button, input, textarea, a {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme Overrides */
+html.light {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.light body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.light .glass-header {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .bg-brand-darkBg {
+  background-color: #F8FAFC !important;
+}
+
+html.light .bg-brand-darkBg\/40 {
+  background-color: #F8FAFC !important;
+}
+
+html.light .bg-brand-darkBg\/60 {
+  background-color: #F1F5F9 !important;
+}
+
+html.light .bg-brand-darkCard,
+html.light .bg-brand-darkCard\/30,
+html.light .bg-brand-darkCard\/40,
+html.light .bg-brand-darkCard\/60 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* Light Theme Card Gradients Overrides (Trust Seal & Special Cards) */
+html.light .bg-gradient-to-br.from-brand-darkCard,
+html.light .from-brand-darkCard {
+  background-image: linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 50%, #FFFBEB 100%) !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+  box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.08) !important;
+}
+
+/* Image Dropzone & File Preview in Light Mode */
+html.light #image-dropzone {
+  background-color: #F8FAFC !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light #image-dropzone:hover {
+  background-color: #FFFBEB !important;
+  border-color: #D97706 !important;
+}
+
+html.light #file-preview {
+  background-color: #FFFFFF !important;
+  border-color: rgba(217, 119, 6, 0.35) !important;
+}
+
+html.light .border-brand-darkBorder {
+  border-color: #E2E8F0 !important;
+}
+
+html.light .border-white\/5 {
+  border-color: #E2E8F0 !important;
+}
+
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-100 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748B !important;
+}
+
+html.light .text-gradient-gold {
+  background: linear-gradient(135deg, #0F172A 20%, #D97706 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .hover-border-glow:hover {
+  border-color: rgba(217, 119, 6, 0.4) !important;
+  box-shadow: 0 10px 25px -5px rgba(217, 119, 6, 0.12) !important;
+}
+
+html.light input, 
+html.light textarea {
+  background-color: #F1F5F9 !important;
+  border-color: #CBD5E1 !important;
+  color: #0F172A !important;
+}
+
+html.light input::placeholder, 
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+html.light input:focus, 
+html.light textarea:focus {
+  border-color: #D97706 !important;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+}
+
+html.light .faq-item {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Brand Logos Styling & Filters */
+.brand-logo-card img {
+  filter: brightness(0) invert(0.85) !important;
+  transition: all 0.3s ease;
+}
+
+.brand-logo-card:hover img,
+.group:hover .brand-logo-card img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(250, 204, 21, 0.6)) !important;
+}
+
+html.light .brand-logo-card img {
+  filter: brightness(0) invert(0.2) !important;
+}
+
+html.light .brand-logo-card:hover img,
+html.light .group:hover .brand-logo-card img {
+  filter: brightness(0) invert(0) drop-shadow(0 0 8px rgba(217, 119, 6, 0.4)) !important;
+}
+
+/* Brand Yellow Contrast Overrides for Light Mode */
+html.light .text-brand-yellow {
+  color: #B45309 !important; /* Rich Amber 700 with high contrast against white */
+}
+
+html.light .hover\:text-brand-yellow:hover {
+  color: #B45309 !important;
+}
+
+html.light .bg-brand-yellow\/10 {
+  background-color: rgba(217, 119, 6, 0.12) !important;
+}
+
+html.light .border-brand-yellow\/20,
+html.light .border-brand-yellow\/30,
+html.light .border-brand-yellow\/40,
+html.light .border-brand-yellow\/50 {
+  border-color: rgba(217, 119, 6, 0.35) !important;
+}
+
+html.light .bg-brand-yellow\/20 {
+  background-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+html.light a.glass-panel:hover,
+html.light button.glass-panel:hover {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Header Navigation Links Styling */
+.nav-link {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+html.light .nav-link {
+  color: #1E293B !important; /* Slate 800 for high-contrast crisp readability */
+}
+
+html.light .nav-link:hover {
+  color: #B45309 !important; /* Rich Amber 700 */
+  background-color: rgba(217, 119, 6, 0.1) !important;
+}
+
+/* Flag Pill Component & Light Theme Consistency */
+.flag-pill {
+  background-color: rgba(22, 22, 26, 0.85);
+  border: 1px solid var(--color-dark-border);
+  color: #E2E8F0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flag-pill:hover {
+  border-color: rgba(250, 204, 21, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.15);
+}
+
+.flag-img {
+  width: 22px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+html.light .flag-pill {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .flag-pill:hover {
+  border-color: rgba(217, 119, 6, 0.5) !important;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.12) !important;
+}
+
+html.light .flag-img {
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Active Navigation Link Indicator */
+.nav-link.active {
+  color: #FACC15 !important;
+  background-color: rgba(250, 204, 21, 0.15) !important;
+  border-color: rgba(250, 204, 21, 0.35) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(250, 204, 21, 0.1) !important;
+}
+
+html.light .nav-link.active {
+  color: #B45309 !important;
+  background-color: rgba(217, 119, 6, 0.15) !important;
+  border-color: rgba(217, 119, 6, 0.35) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08) !important;
+}
+
+/* Toast Notifications System Styling */
+.toast-card {
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: toastSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.3s ease;
+}
+
+.toast-card.toast-hiding {
+  animation: toastSlideOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+}
+
+/* 30-Second Toast Auto-Dismiss Progress Bar */
+@keyframes toastProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.toast-progress-bar {
+  animation: toastProgress 30s linear forwards;
+}
+
+html.light .toast-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+
+
