@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Taxis Futrono - Consulta de Tarifas</title>
+  <meta name="description"
+    content="Consulta rápida de tarifas de taxis y fletes en Futrono, Llifén, Coique y zonas rurales.">
+  <meta name="theme-color" content="#0d231e">
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png?version=20260728_165958">
+  <link rel="apple-touch-icon" href="favicon.png?version=20260728_165958">
+  <link rel="stylesheet" href="style.css?version=20260728_165958">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-taxi"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Taxis Futrono</h1>
+          <span class="sub-brand"><i class="fa-solid fa-location-dot"></i> Tarifario Diurno</span>
+        </div>
+      </div>
+      <button id="themeToggleBtn" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sticky Search Bar & Controls -->
+  <div class="search-section">
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar destino (ej: Llifén, Coique, Valdivia...)"
+          autocomplete="off" enterkeyhint="search">
+        <button id="clearSearchBtn" class="clear-btn hidden" aria-label="Limpiar búsqueda">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Surcharge Warning Banner -->
+      <div class="notice-banner">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span><strong>Aviso:</strong> Salidas o trayectos fuera del centro (ej: Cesfam, Los Castaños, Cun Cun, Residencia) tienen un recargo de <strong>+$1.000</strong>.</span>
+      </div>
+
+      <!-- Categories Scrollable Filter -->
+      <div class="categories-wrapper">
+        <div class="categories-scroll" id="categoriesContainer">
+          <button class="cat-chip active" data-category="Todos">
+            <i class="fa-solid fa-layer-group"></i> Todos (<span id="totalCount">0</span>)
+          </button>
+          <button class="cat-chip" data-category="Urbano">
+            <i class="fa-solid fa-city"></i> Urbano
+          </button>
+          <button class="cat-chip" data-category="Sectores Futrono">
+            <i class="fa-solid fa-map-pin"></i> Sectores Futrono
+          </button>
+          <button class="cat-chip" data-category="Cerrillos / Coique / Llifén">
+            <i class="fa-solid fa-umbrella-beach"></i> Coique / Llifén
+          </button>
+          <button class="cat-chip" data-category="Termas & Turismo">
+            <i class="fa-solid fa-hot-tub-person"></i> Termas & Turismo
+          </button>
+          <button class="cat-chip" data-category="Interurbano / Cordillera">
+            <i class="fa-solid fa-mountain"></i> Cordillera
+          </button>
+          <button class="cat-chip" data-category="Ciudades & Aeropuertos">
+            <i class="fa-solid fa-plane-departure"></i> Aeropuertos & Ciudades
+          </button>
+          <button class="cat-chip" data-category="Favoritos">
+            <i class="fa-solid fa-star"></i> Favoritos (<span id="favCount">0</span>)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- Sort & Result Info Bar -->
+    <div class="results-header">
+      <div class="results-info">
+        <span id="resultsCount">Mostrando destinos...</span>
+      </div>
+      <div class="sort-selector">
+        <i class="fa-solid fa-arrow-down-wide-short"></i>
+        <select id="sortSelect" aria-label="Ordenar resultados">
+          <option value="relevance">Relevancia</option>
+          <option value="price-asc">Precio: Menor a Mayor</option>
+          <option value="price-desc">Precio: Mayor a Menor</option>
+          <option value="name-asc">Nombre: A - Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Quick Chips / Shortcut Destinations -->
+    <div class="quick-chips-container" id="quickChips">
+      <span class="quick-title">Búsquedas rápidas:</span>
+      <button class="quick-chip" data-query="Llifen">Llifén</button>
+      <button class="quick-chip" data-query="Coique">Bahía Coique</button>
+      <button class="quick-chip" data-query="Termas">Termas</button>
+      <button class="quick-chip" data-query="Valdivia">Valdivia</button>
+      <button class="quick-chip" data-query="Aeropuerto">Aeropuerto</button>
+    </div>
+
+    <!-- Destinations List Container -->
+    <div id="destinationsList" class="destinations-grid">
+      <!-- Dynamic list injected by JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state hidden">
+      <div class="empty-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+      <h3>No se encontraron destinos</h3>
+      <p>Intenta buscando con palabras más cortas o revisa la ortografía.</p>
+      <button id="resetSearchBtn" class="btn btn-primary">Ver todos los destinos</button>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navigation / Quick Calculator Modal Trigger -->
+  <footer class="app-footer">
+    <div class="footer-nav">
+      <button id="navSearchBtn" class="nav-item active">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar</span>
+      </button>
+      <button id="navKmCalcBtn" class="nav-item">
+        <i class="fa-solid fa-calculator"></i>
+        <span>Calc. Km</span>
+      </button>
+      <button id="navInfoBtn" class="nav-item">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Tarifario</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Modal: Km Calculator -->
+  <div id="kmModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-calculator"></i> Calculadora por Kilómetros</h3>
+        <button class="close-modal-btn" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <label for="kmInput">Distancia en Kilómetros (Km):</label>
+          <input type="number" id="kmInput" placeholder="Ej: 15" min="1" step="0.5">
+        </div>
+        <div class="input-group">
+          <label for="kmRateInput">Precio por Kilómetro ($/Km):</label>
+          <input type="number" id="kmRateInput" value="750" placeholder="Ej: 750" min="100" step="50">
+        </div>
+        <div class="input-group">
+          <label for="tariffTimeSelect">Horario:</label>
+          <select id="tariffTimeSelect">
+            <option value="diurno">Diurno (07:00 - 21:59) - $750 / km</option>
+            <option value="nocturno">Nocturno (22:00 - 06:59) - $900 / km</option>
+          </select>
+        </div>
+        <div class="calc-result-box">
+          <span class="result-label">Estimación Tarifaria:</span>
+          <span id="kmCalcTotal" class="result-amount">$0</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary close-modal-btn">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: General Info -->
+  <div id="infoModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-circle-info"></i> Información del Tarifario</h3>
+        <button class="close-modal-btn" aria-label="Cerrar modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body info-modal-body">
+        <div class="info-badge-grid">
+          <div class="info-card">
+            <i class="fa-solid fa-sun"></i>
+            <div>
+              <strong>Horario Diurno</strong>
+              <span>07:00 a 21:59 hrs</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <div>
+              <strong>Tarifa Mínima</strong>
+              <span id="infoMinRate">$2.000</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-moon"></i>
+            <div>
+              <strong>Tarifa Nocturna Base</strong>
+              <span id="infoNightRate">$3.000</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-box"></i>
+            <div>
+              <strong>Servicio Encargo</strong>
+              <span id="infoDeliveryRate">+$2.000 (Adicional)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <p id="infoSalidasNote">
+            "Referencia de Tarifas" se cobrarán $500 adicional, rutas que no sean destino al centro de la comuna. Ejemplo Pedro de Valdivia Los Castaños. Cun Cun, Cesfam. Puerto Las rosas Los Castaños. Nueva 6 Sup. El Trébol. Etcétera.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary close-modal-btn">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">Notificación</span>
+  </div>
+
+  <script src="app.js?version=20260728_165958"></script>
+</body>
+
+</html>
