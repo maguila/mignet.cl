@@ -1,0 +1,21 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+.env
+.env.*
+desktop.ini
+Thumbs.db
+.DS_Store
+*.log
+
+# Archivos internos / desarrollo de subproyectos
+bustex.cl/.agents
+bustex.cl/.gitignore
+bustex.cl/dist
+bustex.cl/docker-compose.yml
+bustex.cl/Dockerfile
+bustex.cl/package.py
+bustex.cl/README.md
+taxis/.gitignore
+taxis/README.md
